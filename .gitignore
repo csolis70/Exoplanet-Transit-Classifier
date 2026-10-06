@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments (ours lives outside the repo, but just in case)
+.venv/
+venv/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Data and model artifacts: large, reproducible, and not source code.
+# The .gitkeep files keep the (empty) folders in the repo.
+data/*
+!data/.gitkeep
+models/*
+!models/.gitkeep
+
+# Secrets / local config
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
