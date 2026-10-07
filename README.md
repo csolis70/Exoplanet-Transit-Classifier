@@ -8,6 +8,26 @@ A machine learning project that analyzes stellar light curves from NASA's
 > caused by eclipsing binaries, instrumental systematics, or stellar variability. The model does
 > not confirm that a planet exists.
 
+## Background
+
+### The physics
+
+When a planet passes in front of its star, the star's brightness dips slightly, usually by about
+0.1% to 1%. TESS records a star's brightness every few minutes for weeks. That record is a *light
+curve*. A planet shows up as a small dip that repeats at regular intervals.
+
+### The problem
+
+Thousands of stars produce dips, and most are not planets. Eclipsing binary stars, starspots, and
+instrument glitches all make dips too. Astronomers have to sort real candidates from impostors,
+and doing that by hand does not scale.
+
+### The ML task
+
+Given a light curve, predict whether the dip is a planet candidate or an impostor. This is binary
+classification. Training labels come from the NASA TOI catalog, where astronomers have already
+judged many signals (confirmed planets are positive, false positives are negative).
+
 ## Status
 
 Early development. Done so far: repository scaffolding, TOI catalog download/cleaning, and a
