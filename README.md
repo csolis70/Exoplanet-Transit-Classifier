@@ -28,6 +28,19 @@ Given a light curve, predict whether the dip is a planet candidate or an imposto
 classification. Training labels come from the NASA TOI catalog, where astronomers have already
 judged many signals (confirmed planets are positive, false positives are negative).
 
+### Example: a planet vs. a false positive
+
+![Raw and phase-folded light curves for a known planet (TOI 192.01) and a false positive
+(TOI 1023.01)](docs/light_curve_comparison.png)
+
+Top row: TOI 192.01, a known planet. The raw light curve (left) shows repeating dips about 1.2%
+deep. Folding at the known period (right) stacks them into a clean, sharp, flat-bottomed dip.
+Bottom row: TOI 1023.01, a false positive. Its folded dip is shallower, wider, and rounded.
+
+Why this matters for the ML: the model's job is to learn the difference between these two
+right-hand panels. That is why we fold and bin the data. Every example then becomes a short,
+fixed-length shape the model can compare.
+
 ## Status
 
 Early development. Done so far: repository scaffolding, TOI catalog download/cleaning, and a
