@@ -10,7 +10,16 @@ A machine learning project that analyzes stellar light curves from NASA's
 
 ## Status
 
-Early development. Currently: repository scaffolding.
+Early development. Done so far: repository scaffolding, TOI catalog download/cleaning, and a
+catalog EDA notebook. Next: downloading light curves.
+
+## Data source
+
+Labels and signal parameters come from the
+[NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/) TESS Project Candidates (TOI)
+table, fetched through its TAP service (`src/transit_classifier/catalog.py`). The catalog changes
+over time, so results are tied to a snapshot: the current local snapshot was downloaded on
+**2026-10-07** (8,148 TOIs, 2,801 with a CP/KP/FP/FA label).
 
 ## Planned pipeline
 
