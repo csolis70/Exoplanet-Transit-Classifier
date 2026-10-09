@@ -11,6 +11,7 @@ import numpy as np
 GLOBAL_BINS = 201
 LOCAL_BINS = 61
 LOCAL_HALF_WIDTH_DURATIONS = 2.0  # local view spans +/- 2 transit durations around mid-transit
+BTJD_OFFSET = 2457000.0  # catalog epochs are BJD; TESS light-curve times are BTJD = BJD - this
 
 
 def stitch(sectors: list[tuple[np.ndarray, np.ndarray]]) -> tuple[np.ndarray, np.ndarray]:
